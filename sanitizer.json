@@ -19,6 +19,14 @@
       "writeOnly": false,
       "observable": true,
       "value": null
+    },
+    "temperature": {
+      "type": "number",
+      "description": "temperature value recieved by thermosensor",
+      "readOnly": true,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
     }
   },
   "actions": {
