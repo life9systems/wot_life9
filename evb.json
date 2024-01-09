@@ -1,0 +1,140 @@
+{
+  "@context": "https://www.w3.org/2019/wot/td/v1",
+  "@type": "Thing",
+  "title": "EVB",
+  "description": "EVB",
+  "attributes": {
+    "location": "india"
+  },
+  "properties": {
+    "status": {
+      "type": "string",
+      "description": "Status of the sanitizer.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "alert": {
+      "type": "string",
+      "description": "Alert status of the sanitizer.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "bv": {
+      "type": "number",
+      "description": "Blood Volume (BV) measurement.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "v1": {
+      "type": "number",
+      "description": "V1 measurement.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "v2": {
+      "type": "number",
+      "description": "V2 measurement.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "v3": {
+      "type": "number",
+      "description": "V3 measurement.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "v4": {
+      "type": "number",
+      "description": "V4 measurement.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "cc": {
+      "type": "number",
+      "description": "CC measurement.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "dc": {
+      "type": "number",
+      "description": "DC measurement.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "h": {
+      "type": "number",
+      "description": "H measurement.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "t": {
+      "type": "number",
+      "description": "T measurement.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "lat": {
+      "type": "number",
+      "description": "Latitude measurement.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "long": {
+      "type": "number",
+      "description": "Longitude measurement.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "date": {
+      "type": "string",
+      "description": "Date information.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "actions": {
+      "type": "string",
+      "description": "Action information.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    }
+  },
+  "actions": {
+    // actions
+    }
+  },
+  "events": {
+    // events
+    }
+  }
+}
+

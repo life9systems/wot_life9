@@ -1,0 +1,90 @@
+{
+  "@context": "https://www.w3.org/2019/wot/td/v1",
+  "@type": "Thing",
+  "title": "SmartBuilding",
+  "description": "A smart building with multiple blocks, floors, apartments, and rooms.",
+  "properties": {
+    "blocks": {
+      "type": "array",
+      "description": "List of blocks in the building.",
+      "items": {
+        "type": "object",
+        "attributes": {
+          "blockID": {
+            "type": "string",
+            "description": "ID of the block (e.g., 'BlockA')."
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of the block (e.g., 'Residential')."
+          }
+        },
+        "properties": {
+          "floors": {
+            "type": "array",
+            "description": "List of floors in the block.",
+            "items": {
+              "type": "object",
+              "attributes": {
+                "floorID": {
+                  "type": "string",
+                  "description": "ID of the floor (e.g., 'Floor1')."
+                },
+                "type": {
+                  "type": "string",
+                  "description": "Type of the floor (e.g., 'Residential')."
+                }
+              },
+              "properties": {
+                "apartments": {
+                  "type": "array",
+                  "description": "List of apartments on the floor.",
+                  "items": {
+                    "type": "object",
+                    "attributes": {
+                      "apartmentID": {
+                        "type": "string",
+                        "description": "ID of the apartment (e.g., 'Apt101')."
+                      },
+                      "type": {
+                        "type": "string",
+                        "description": "Type of the apartment (e.g., '2BHK')."
+                      }
+                    },
+                    "properties": {
+                      "rooms": {
+                        "type": "array",
+                        "description": "List of rooms in the apartment.",
+                        "items": {
+                          "type": "object",
+                          "attributes": {
+                            "roomID": {
+                              "type": "string",
+                              "description": "ID of the room (e.g., 'Bedroom1')."
+                            },
+                            "type": {
+                              "type": "string",
+                              "description": "Type of the room (e.g., 'MasterBedroom')."
+                            }
+                          }
+                          // Additional room properties can be added here
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "actions": {
+    // Define actions if needed
+  },
+  "events": {
+    // Define events if needed
+  }
+}
+

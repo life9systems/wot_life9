@@ -1,0 +1,33 @@
+{
+  "@context": "https://www.w3.org/2019/wot/td/v1",
+  "@type": "Thing",
+  "title": "temperature_sensor",
+  "description": "temperature_sensor",
+  "properties": {
+    "status": {
+              "properties": {
+                  "power": true,
+                  "brightness": 50
+              }
+          },
+     "color": {
+      "properties": {
+	  "hue": 30,
+	  "saturation": 80
+      }
+  }
+  },
+  "actions": {
+    // actions
+    }
+    ,
+  "events": {
+    // events
+    },
+  "dynamicAttributes": {
+    "block": ["block1", "block2"],             // Add more blocks as needed
+    "floor": [1, 2, 3, 4],                               // Add more floors as needed
+    "apartment": [1, 2, 3, 4],                           // Add more apartments as needed
+    "room": [1, 2]                   // Add more rooms as needed
+  }
+}

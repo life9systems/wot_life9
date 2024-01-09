@@ -1,0 +1,71 @@
+{
+  "@context": "https://www.w3.org/2019/wot/td/v1",
+  "title": "Smart Home Township",
+  "description": "Web of Things Thing Description for a smart home township in Bangalore.",
+  "properties": {
+    "blocks": {
+      "type": "array",
+      "description": "Array of blocks in the township.",
+      "maxItems": 4, // Maximum number of blocks
+      "items": {
+        "type": "object",
+        "properties": {
+          "blockNumber": {
+            "type": "string",
+            "description": "Identifier for the block (e.g., BlockA)."
+          },
+          "floors": {
+            "type": "array",
+            "description": "Array of floors in the block.",
+            "maxItems": 4, // Maximum number of floors in each block
+            "items": {
+              "type": "object",
+              "properties": {
+                "floorNumber": {
+                  "type": "string",
+                  "description": "Identifier for the floor (e.g., Floor1)."
+                },
+                "apartments": {
+                  "type": "array",
+                  "description": "Array of apartments on the floor.",
+                  "maxItems": 4, // Maximum number of apartments in each floor
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "apartmentNumber": {
+                        "type": "string",
+                        "description": "Identifier for the apartment (e.g., A101)."
+                      },
+                      "rooms": {
+                        "type": "array",
+                        "description": "Array of rooms in the apartment.",
+                        "maxItems": 2, // Maximum number of rooms in each apartment
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "roomNumber": {
+                              "type": "string",
+                              "description": "Identifier for the room (e.g., LivingRoom)."
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "forms": [
+    {
+      "href": "/getAllBlocks",
+      "htv:methodName": "GET",
+      "contentType": "application/json"
+    }
+  ]
+}
+

@@ -1,0 +1,72 @@
+{
+  "@context": "https://www.w3.org/2019/wot/td/v1",
+  "@type": "Thing",
+  "title": "Sanitizer Thing",
+  "description": "A smart sanitizer with features, actions, and events.",
+  "properties": {
+    "power": {
+      "type": "boolean",
+      "description": "Current power status of the sanitizer.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "dispenserLevel": {
+      "type": "number",
+      "description": "Current sanitizer level in the dispenser.",
+      "readOnly": true,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    }
+  },
+  "actions": {
+    "turnOn": {
+      "description": "Turn on the sanitizer.",
+      "input": {},
+      "output": {
+        "type": "string",
+        "description": "Response message indicating success or failure."
+      }
+    },
+    "turnOff": {
+      "description": "Turn off the sanitizer.",
+      "input": {},
+      "output": {
+        "type": "string",
+        "description": "Response message indicating success or failure."
+      }
+    },
+    "refillSanitizer": {
+      "description": "Refill the sanitizer dispenser.",
+      "input": {
+        "amount": {
+          "type": "number",
+          "description": "Amount of sanitizer to refill."
+        }
+      },
+      "output": {
+        "type": "string",
+        "description": "Response message indicating success or failure."
+      }
+    }
+  },
+  "events": {
+    "dispenserEmpty": {
+      "description": "Event triggered when the sanitizer dispenser is empty.",
+      "data": {
+        "type": "boolean",
+        "description": "Indicator of whether the dispenser is empty."
+      }
+    },
+    "sanitizerLevelChanged": {
+      "description": "Event triggered when the sanitizer level changes.",
+      "data": {
+        "type": "number",
+        "description": "New sanitizer level in the dispenser."
+      }
+    }
+  }
+}
+

@@ -1,0 +1,90 @@
+{
+  "@context": "https://www.w3.org/2019/wot/td/v1",
+  "@type": "Thing",
+  "title": "BMC",
+  "description": "BMC",
+  "attributes": {
+    "location": "india"
+  },
+  "properties": {
+    "seq": {
+      "type": "number",
+      "description": "Sequence value.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "DT": {
+      "type": "number",
+      "description": "DT value.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "lid": {
+      "type": "string",
+      "description": "Lid status.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "smotor": {
+      "type": "string",
+      "description": "Status of smotor.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "cmotor": {
+      "type": "string",
+      "description": "Status of cmotor.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "T": {
+      "type": "number",
+      "description": "Temperature T.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "H": {
+      "type": "number",
+      "description": "Humidity H.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "T1": {
+      "type": "number",
+      "description": "Temperature T1.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "T2": {
+      "type": "number",
+      "description": "Temperature T2.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    }
+  },
+  "actions": {
+    // Add your specific actions here
+  },
+  "events": {
+    // Add your specific events here
+  }
+}
+
