@@ -53,70 +53,30 @@
       "value": null
     }
   },
-  "features": {
-    "dispenser": {
-      "properties": {
-        "dispenseVolume": {
-          "type": "number",
-          "description": "Volume of sanitizer dispensed.",
-          "readOnly": true,
-          "writeOnly": false,
-          "observable": true,
-          "value": null
-        },
-        "fluidLevel": {
-          "type": "number",
-          "description": "Fluid level in the sanitizer.",
-          "readOnly": true,
-          "writeOnly": false,
-          "observable": true,
-          "value": null
-        },
-        "liquidType": {
-          "type": "string",
-          "description": "Type of liquid in the sanitizer.",
-          "readOnly": false,
-          "writeOnly": false,
-          "observable": true,
-          "value": null
-        }
-      }
+  "properties": {
+    "dispenseVolume": {
+      "type": "number",
+      "description": "Volume of sanitizer dispensed.",
+      "readOnly": true,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
     },
-    "status": {
-      "properties": {
-        "activeStatus": {
-          "type": "boolean",
-          "description": "Status of sanitizer activation.",
-          "readOnly": false,
-          "writeOnly": true,
-          "observable": true,
-          "value": null
-        },
-        "alertAlarmStatus": {
-          "type": "boolean",
-          "description": "Status of alerts or alarms.",
-          "readOnly": true,
-          "writeOnly": false,
-          "observable": true,
-          "value": null
-        },
-        "batteryStatus": {
-          "type": "string",
-          "description": "Status of the sanitizer battery.",
-          "readOnly": true,
-          "writeOnly": false,
-          "observable": true,
-          "value": null
-        },
-        "powerStatus": {
-          "type": "string",
-          "description": "Power status of the sanitizer device.",
-          "readOnly": true,
-          "writeOnly": false,
-          "observable": true,
-          "value": null
-        }
-      }
+    "fluidLevel": {
+      "type": "number",
+      "description": "Fluid level in the sanitizer.",
+      "readOnly": true,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "liquidType": {
+      "type": "string",
+      "description": "Type of liquid in the sanitizer.",
+      "readOnly": false,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
     },
     "batteryVoltage": {
       "type": "number",
@@ -143,6 +103,38 @@
       "writeOnly": false,
       "observable": true,
       "value": null
+    },
+    "activeStatus": {
+      "type": "boolean",
+      "description": "Status of sanitizer activation.",
+      "readOnly": false,
+      "writeOnly": true,
+      "observable": true,
+      "value": null
+    },
+    "alertAlarmStatus": {
+      "type": "boolean",
+      "description": "Status of alerts or alarms.",
+      "readOnly": true,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "batteryStatus": {
+      "type": "string",
+      "description": "Status of the sanitizer battery.",
+      "readOnly": true,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
+    },
+    "powerStatus": {
+      "type": "string",
+      "description": "Power status of the sanitizer device.",
+      "readOnly": true,
+      "writeOnly": false,
+      "observable": true,
+      "value": null
     }
   },
   "actions": {
@@ -152,4 +144,3 @@
     // Add your specific events here
   }
 }
-
