@@ -1,6 +1,7 @@
 import subprocess
 import json
 import base64
+import os
 
 BASE_URL = 'http://localhost:8080/api/2/things'
 POLICY_URL = "http://localhost:8080/api/2/policies"
@@ -9,9 +10,9 @@ PASSWORD = 'ditto'
 AUTH_HEADER = f"Basic {base64.b64encode(f'{USERNAME}:{PASSWORD}'.encode('ascii')).decode('ascii')}"
 POLICY = 'devices.policy:thing_policy'
 
-blocks = 2
-floors = 5
-apartments = 4
+blocks = 1
+floors = 2
+apartments = 2
 
 DEVICE_POLICY = {
     "entries": {
@@ -82,6 +83,29 @@ def generate_thing_payload(thing_id, definition_url, attributes):
         "policyId": POLICY,
         "attributes": attributes
     }
+    
+def generate_thing_payload_sanitizer(thing_id, definition_url, attributes, file_name):
+    # Load JSON data from the file
+
+    directory = '/home/prashant/wot_life9/'
+    # Specify the file name
+    # Combine the directory and file name to create the full path
+    json_file_path = os.path.join(directory, file_name)
+
+    with open(json_file_path, 'r') as json_file:
+        data = json.load(json_file)
+
+    # Extract properties
+    properties = data.get('properties', {})
+    properties = {key: None for key in properties}
+    return {
+        "definition": definition_url,
+        "policy": POLICY,
+        "policyId": POLICY,
+        "attributes": attributes,
+        "features":properties
+    }
+
 
 def generate_curl_command(thing_id, thing_payload):
     return [
@@ -95,6 +119,7 @@ def generate_curl_command(thing_id, thing_payload):
     ]
 
 
+
 def run_subprocess(command):
     try:
         subprocess.run(command, check=True, text=True)
@@ -106,59 +131,55 @@ def create_things():
         thing_id = f'block:block{block}'
         definition_url = "https://raw.githubusercontent.com/life9systems/wot_life9/main/smartBuilding.json"
         block_attributes = {
-            "BlockName": "blockName",
-            "BlockID": thing_id,
+            "Name": "blockName",
+            "ID": thing_id,
             "Type":"Block"
         }
         
         block_thing_payload = generate_thing_payload(thing_id, definition_url, block_attributes)
-        print(block_thing_payload)
         block_curl_command = generate_curl_command(thing_id, block_thing_payload)
-        print(block_curl_command)
         run_subprocess(block_curl_command)
 
         for floor in range(1, floors+1):
             thing_id = f'floor:floor{floor}'
             definition_url = "https://raw.githubusercontent.com/life9systems/wot_life9/main/smartBuilding.json"
             floor_attributes = {
-                "FloorName": "floorName",
-                "FloorID": thing_id,
+                "Name": "floorName",
+                "ID": thing_id,
                 "Type":"Floor"
             }
             
             floor_thing_payload = generate_thing_payload(thing_id, definition_url, floor_attributes)
-            print(floor_thing_payload)
             floor_curl_command = generate_curl_command(thing_id, floor_thing_payload)
-            print(floor_curl_command)
             run_subprocess(floor_curl_command)
             for apartment in range(1, apartments+1):
                 thing_id = f'apartment:apartment{apartment}'
                 definition_url = "https://raw.githubusercontent.com/life9systems/wot_life9/main/smartBuilding.json"
                 apartment_attributes = {
-                    "ApartmentName": "apartmentName",
-                    "ApartmentID": thing_id,
+                    "Name": "apartmentName",
+                    "ID": thing_id,
                     "Type":"Apartment"
                 }
                 
                 apartment_thing_payload = generate_thing_payload(thing_id, definition_url, apartment_attributes)
-                print(apartment_thing_payload)
                 apartment_curl_command = generate_curl_command(thing_id, apartment_thing_payload)
-                print(apartment_curl_command)
                 run_subprocess(apartment_curl_command)
                 
+                file_name = 'bms_sanitizer.json'
+
                 device_name = "sanitizer_life9"
                 thing_id = f'wot.block{block}.floor{floor}.apartment{apartment}:{device_name}'
-                definition_url = "https://raw.githubusercontent.com/life9systems/wot_life9/main/santizer_life9.json"
+                definition_url = "https://raw.githubusercontent.com/life9systems/wot_life9/main/bms_sanitizer.json"
                 common_attributes = {
                     "block": block,
                     "floor": floor,
                     "apartment": apartment,
                     "MACID": f'MACID_{block}_{floor}_{apartment}',
                     "serialNumber": f'SerialNumber_{block}_{floor}_{apartment}'
-                    
                 }
-
-                thing_payload = generate_thing_payload(thing_id, definition_url, common_attributes)
+                
+                thing_payload = generate_thing_payload_sanitizer(thing_id, definition_url, common_attributes)
+                # print(thing_payload)
                 curl_command = generate_curl_command(thing_id, thing_payload)
                 print(curl_command)
                 run_subprocess(curl_command)

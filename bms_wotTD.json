@@ -1,0 +1,55 @@
+{
+    "@context": "https://www.w3.org/2019/wot/td/v1",
+    "@type": "Thing",
+    "title": "SmartBuilding",
+    "description": "A smart building with multiple blocks, floors, apartments, and rooms.",
+    "properties": {
+      "block1": {
+        "description": "Details of Block1",
+        "properties": {
+          "blockID": {
+            "description": "ID of Block1 (e.g., 'Block1')",
+            "type": "string",
+            "default": "Block1"
+          },
+          "floors": {
+            "description": "Number of floors in Block1",
+            "type": "integer",
+            "default": 4
+          },
+          "apartments": {
+            "description": "Number of apartments on each floor in Block1",
+            "type": "integer",
+            "default": 8
+          }
+        }
+      },
+      "block2": {
+        "description": "Details of Block2",
+        "properties": {
+          "blockID": {
+            "description": "ID of Block2 (e.g., 'Block2')",
+            "type": "string",
+            "default": "Block2"
+          },
+          "floors": {
+            "description": "Number of floors in Block2",
+            "type": "integer",
+            "default": 6
+          },
+          "apartments": {
+            "description": "Number of apartments on each floor in Block2",
+            "type": "integer",
+            "default": 12
+          }
+        }
+      }
+    },
+    "actions": {
+      "// Define actions if needed": ""
+    },
+    "events": {
+      "// Define events if needed": ""
+    }
+  }
+  
