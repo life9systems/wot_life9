@@ -15,12 +15,12 @@
           "floors": {
             "description": "Number of floors in Block1",
             "type": "integer",
-            "default": 4
+            "default": 1
           },
           "apartments": {
             "description": "Number of apartments on each floor in Block1",
             "type": "integer",
-            "default": 8
+            "default": 2
           }
         }
       },
@@ -35,12 +35,12 @@
           "floors": {
             "description": "Number of floors in Block2",
             "type": "integer",
-            "default": 6
+            "default": 1
           },
           "apartments": {
             "description": "Number of apartments on each floor in Block2",
             "type": "integer",
-            "default": 12
+            "default": 2
           }
         }
       }
