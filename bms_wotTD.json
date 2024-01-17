@@ -12,12 +12,12 @@
             "type": "string",
             "default": "Block1"
           },
-          "floors": {
+          "num_floors": {
             "description": "Number of floors in Block1",
             "type": "integer",
             "default": 1
           },
-          "apartments": {
+          "num_apartments": {
             "description": "Number of apartments on each floor in Block1",
             "type": "integer",
             "default": 2
@@ -32,12 +32,12 @@
             "type": "string",
             "default": "Block2"
           },
-          "floors": {
+          "num_floors": {
             "description": "Number of floors in Block2",
             "type": "integer",
             "default": 1
           },
-          "apartments": {
+          "num_apartments": {
             "description": "Number of apartments on each floor in Block2",
             "type": "integer",
             "default": 2
